@@ -1,0 +1,7 @@
+# first line must not contain any rules
+
+/*.gif
+/*.png
+/*.jpg
+
+!.gitignore
