@@ -20,109 +20,6 @@
 	
 	<script src="js/jquery-1.9.0.js"></script>
 	<script src="js/jquery-ui-1.10.0.custom.js"></script>
-	
-	<script>
-		$(function() {
-	
-			$( "#accordion" ).accordion();
-	
-	
-	
-			var availableTags = [
-				"ActionScript",
-				"AppleScript",
-				"Asp",
-				"BASIC",
-				"C",
-				"C++",
-				"Clojure",
-				"COBOL",
-				"ColdFusion",
-				"Erlang",
-				"Fortran",
-				"Groovy",
-				"Haskell",
-				"Java",
-				"JavaScript",
-				"Lisp",
-				"Perl",
-				"PHP",
-				"Python",
-				"Ruby",
-				"Scala",
-				"Scheme"
-			];
-			$( "#autocomplete" ).autocomplete({
-				source: availableTags
-			});
-	
-	
-	
-			$( "#button" ).button();
-			$( "#radioset" ).buttonset();
-	
-	
-	
-			$( "#tabs" ).tabs();
-	
-	
-	
-			$( "#dialog" ).dialog({
-				autoOpen: false,
-				width: 400,
-				buttons: [
-					{
-						text: "Ok",
-						click: function() {
-							$( this ).dialog( "close" );
-						}
-					},
-					{
-						text: "Cancel",
-						click: function() {
-							$( this ).dialog( "close" );
-						}
-					}
-				]
-			});
-	
-			// Link to open the dialog
-			$( "#dialog-link" ).click(function( event ) {
-				$( "#dialog" ).dialog( "open" );
-				event.preventDefault();
-			});
-	
-	
-	
-			$( "#datepicker" ).datepicker({
-				inline: true
-			});
-	
-	
-	
-			$( "#slider" ).slider({
-				range: true,
-				values: [ 17, 67 ]
-			});
-	
-	
-	
-			$( "#progressbar" ).progressbar({
-				value: 20
-			});
-	
-	
-			// Hover states on the static widgets
-			$( "#dialog-link, #icons li" ).hover(
-				function() {
-					$( this ).addClass( "ui-state-hover" );
-				},
-				function() {
-					$( this ).removeClass( "ui-state-hover" );
-				}
-			);
-		});
-		</script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -166,11 +63,11 @@
 			<h2 class="demoHeaders">Accordion</h2>
 			<div id="accordion">
 				<h3>First</h3>
-				<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+				<div><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></div>
 				<h3>Second</h3>
-				<div>Phasellus mattis tincidunt nibh.</div>
+				<div><p>Phasellus mattis tincidunt nibh.</p></div>
 				<h3>Third</h3>
-				<div>Nam dui erat, auctor a, dignissim quis.</div>
+				<div><p>Nam dui erat, auctor a, dignissim quis.</p></div>
 			</div>
 			
 		</div>
@@ -178,4 +75,9 @@
 	</div>
 
 </body>
+<script>
+	$(function() {
+	$( "#accordion" ).accordion();
+	});
+</script>
 </html>
