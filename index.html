@@ -15,14 +15,14 @@
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/coin-slider-styles.css">
-	
-	<link href="stylesheets/jquery-ui-1.10.0.custom.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="stylesheets/responsiveslides.css">
+	<link rel="stylesheet" href="stylesheets/responsiveslides-theme.css">
+	<link rel="stylesheet" href="stylesheets/jquery-ui-1.10.0.custom.css">
+
 	<script src="js/jquery-1.9.0.js"></script>
 	<script src="js/jquery-ui-1.10.0.custom.js"></script>
-	<script src="js/coin-slider.js"></script>
-	
+	<script src="js/responsiveslides.js"></script>
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -39,52 +39,18 @@
 		<div class="sixteen columns">
 
 			<h1 class="remove-bottom" style="margin-top: 40px">Auszeit-weltweit</h1>
-			<h5>Version 0.1</h5>
+			<h5>Version 0.2</h5>
 			<hr>
-					<div id="slider">
-						
-							<a href="http://www.minininjas.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/mini_ninjas.jpg" alt="Mini Ninjas" />
-								<span>
-									<b>Mini Ninjas</b><br />
-									Your quest to defeat the Evil Samurai Warlord has begun. Control the powers of nature, possess creatures, use your
-									furious Ninja skills to free your Ninja friends.
-								</span>
-							</a>
-							
-							<a href="http://www.princeofpersiagame.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/prince_of_persia.jpg" alt="Price of Persia" />
-							</a>
-							
-							<a href="http://spidermandimensions.marvel.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/spiderman_shattered_dimensions.jpg" alt="Spiderman: Shattered Dimensions" />
-							</a>
-							
-							<a href="http://brinkthegame.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/brink.jpg" alt="Brink" />
-							</a>
-						
-							<a href="http://www.godofwar.com/" target="_blank" >
-								<img src="http://workshop.rs/projects/coin-slider/games/god_of_war_3.jpg" alt="God of War III" />
-							</a>
-							
-							<a href="http://www.borderlandsthegame.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/borderlands.jpg" alt="Borderlands" />
-								<span>
-									<b>Borderlands</b><br />
-									Fun combat and a steady flow of rewards make this journey a massively enjoyable one, especially with some fellow mercenaries along for the ride.
-								</span>
-							</a>
-							
-							<a href="http://www.swtor.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/star_wars_the_old_republic.jpg" alt="Star Wars: The Old Republic" />
-							</a>
-								
-							<a href="http://www.batmanarkhamasylum.com/" target="_blank">
-								<img src="http://workshop.rs/projects/coin-slider/games/batman_arkham_asylum.jpg" alt="Batman: Arkham Asylum" />
-							</a>
-							
-						</div>
+
+			<!-- Slideshow 1 -->
+			<div class="rslides_container">
+			  <ul class="rslides" id="slider1">
+				<li><img src="images/1.jpg" alt=""></li>
+				<li><img src="images/2.jpg" alt=""></li>
+				<li><img src="images/3.jpg" alt=""></li>
+			  </ul>
+			</div>
+
 			<hr>
 		</div>
 		
@@ -136,9 +102,16 @@
 </body>
 <script>
 	$(function() {
-	$( "#accordion" ).accordion({ heightStyle: "content" });
-	$( "#accordion" ).accordion({ active: 0 });
-	$('#slider').coinslider();
+		$( "#accordion" ).accordion({ heightStyle: "content" });
+		$( "#accordion" ).accordion({ active: 0 });
+		$("#slider1").responsiveSlides({
+		  auto: false,
+		  pager: true,
+		  nav: true,
+		  speed: 500,
+		  maxwidth: 1200,
+		  namespace: "centered-btns"
+		});
 	});
 </script>
 
