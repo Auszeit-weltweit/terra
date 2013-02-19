@@ -6,7 +6,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Your Page Title Here :)</title>
+	<title>Auszeit-weltweit</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -15,11 +15,13 @@
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
-	
-	<link href="stylesheets/jquery-ui-1.10.0.custom.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="stylesheets/responsiveslides.css">
+	<link rel="stylesheet" href="stylesheets/responsiveslides-theme.css">
+	<link rel="stylesheet" href="stylesheets/jquery-ui-1.10.0.custom.css">
+
 	<script src="js/jquery-1.9.0.js"></script>
 	<script src="js/jquery-ui-1.10.0.custom.js"></script>
+	<script src="js/responsiveslides.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -35,16 +37,50 @@
 
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Skeleton</h1>
-			<h5>Version 1.2</h5>
-			<hr />
+
+			<h1 class="remove-bottom" style="margin-top: 40px">Auszeit-weltweit</h1>
+			<h5>Version 0.2</h5>
+			<hr>
+
+			<!-- Slideshow 1 -->
+			<div class="rslides_container">
+			  <ul class="rslides" id="slider1">
+				<li><img src="images/1.jpg" alt=""></li>
+				<li><img src="images/2.jpg" alt=""></li>
+				<li><img src="images/3.jpg" alt=""></li>
+			  </ul>
+			</div>
+
+			<hr>
+		</div>
+		
+		<div class="one-third column">
+			<!-- Accordion -->
+			<div id="accordion">
+				<h3>Freiwilligenarbeit</h3>
+				<div>
+					<p>Allgemein</p>
+					<ul>
+						<p>Afrika</p>
+						<li>Ghana, Kenia, Südafrika</li>
+						<p>Asien</p>
+						<li>China, Indien, Indonesien, Kambodscha, Laos, Malaysia, Mongolei, Myanmar, Nepal, Sri Lanka, Thailand, Vietnam</li>
+						<p>Europa</p>
+						<li>Frankreich, Portugal</li>
+						<p>Mittel-/Südamerika</p>
+						<li>Argentinien, Bolivien, Chile, Costa Rica, Ecuador, Guatemala, Nicaragua, Panama, Peru</li>
+					</ul>
+				</div>
+				<h3>Farmarbeit</h3>
+				<div><p>Phasellus mattis tincidunt nibh.</p></div>
+				<h3>Work&amp;Travel</h3>
+				<div><p>Nam dui erat, auctor a, dignissim quis.</p></div>
+				<h3>Au Pair</h3>
+				<div><p>Nam dui erat, auctor a, dignissim quis.</p></div>
+			</div>
 		</div>
 		<div class="one-third column">
-			<h3>About Skeleton?</h3>
-			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
-		</div>
-		<div class="one-third column">
-			<h3>Three Core Principles</h3>
+			<h3>Warum mit uns?</h3>
 			<p>Skeleton is built on three core principles:</p>
 			<ul class="square">
 				<li><strong>A Responsive Grid Down To Mobile</strong>: Elegant scaling from a browser to tablets to mobile.</li>
@@ -53,23 +89,12 @@
 			</ul>
 		</div>
 		<div class="one-third column">
-			<h3>Docs &amp; Support</h3>
+			<h3>Welches Programm passt?</h3>
 			<p>The easiest way to really get started with Skeleton is to check out the full docs and info at <a href="http://www.getskeleton.com">www.getskeleton.com.</a>. Skeleton is also open-source and has a <a href="https://github.com/dhgamache/skeleton">project on git</a>, so check that out if you want to report bugs or create a pull request. If you have any questions, thoughts, concerns or feedback, please don't hesitate to email me at <a href="mailto:hi@getskeleton.com">hi@getskeleton.com</a>.</p>
 		</div>
 		
 		<div class="sixteen columns">
-			
-			<!-- Accordion -->
-			<h2 class="demoHeaders">Accordion</h2>
-			<div id="accordion">
-				<h3>First</h3>
-				<div><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></div>
-				<h3>Second</h3>
-				<div><p>Phasellus mattis tincidunt nibh.</p></div>
-				<h3>Third</h3>
-				<div><p>Nam dui erat, auctor a, dignissim quis.</p></div>
-			</div>
-			
+			<hr>
 		</div>
 
 	</div>
@@ -77,7 +102,17 @@
 </body>
 <script>
 	$(function() {
-	$( "#accordion" ).accordion();
+		$( "#accordion" ).accordion({ heightStyle: "content" });
+		$( "#accordion" ).accordion({ active: 0 });
+		$("#slider1").responsiveSlides({
+		  auto: false,
+		  pager: true,
+		  nav: true,
+		  speed: 500,
+		  maxwidth: 1200,
+		  namespace: "centered-btns"
+		});
 	});
 </script>
+
 </html>
